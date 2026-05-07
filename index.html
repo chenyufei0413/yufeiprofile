@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="陈雨菲 · 游戏研究与用户洞察作品集">
-    <title>陈雨菲 · 游戏研究报告</title>
+    <meta name="description" content="陈雨菲 · 游戏研究与文娱市场分析作品集">
+    <title>陈雨菲 · 游戏研究 & 文娱分析</title>
     <style>
         * {
             margin: 0;
@@ -29,7 +29,6 @@
             align-items: start;
         }
 
-        /* 左侧边栏 - 亮色主题 */
         .sidebar {
             position: sticky;
             top: 2rem;
@@ -100,27 +99,47 @@
             color: #334155;
         }
 
-        /* 右侧主区域 - 亮色主题 */
         .main {
             overflow-x: hidden;
+        }
+
+        .module {
+            margin-bottom: 3rem;
+        }
+
+        .module-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.3rem;
         }
 
         .section-title {
             font-size: 1.4rem;
             font-weight: 600;
-            margin: 0 0 1.2rem 0;
-            padding-bottom: 0.3rem;
-            border-bottom: 2px solid #e2e8f0;
-            display: inline-block;
             letter-spacing: -0.2px;
             color: #0f172a;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title span {
+            font-size: 1.2rem;
+        }
+
+        .module-desc {
+            font-size: 0.8rem;
+            color: #64748b;
         }
 
         .works-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
             gap: 1.8rem;
-            margin-bottom: 3rem;
         }
 
         .work-card {
@@ -145,7 +164,7 @@
         }
 
         .work-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 0.4rem;
             line-height: 1.35;
@@ -174,6 +193,10 @@
             color: #334155;
             margin-bottom: 1rem;
             line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .work-link {
@@ -220,6 +243,10 @@
             .tags {
                 justify-content: center;
             }
+            .module-header {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
         }
     </style>
 </head>
@@ -231,27 +258,33 @@
         <div class="name">陈雨菲</div>
         <div class="bio">
             一般路过互联网的阴暗观察者<br>
-            游戏用户研究 · 行业洞察 · 文化分析
+            游戏用户研究 · 文娱趋势 · 营销洞察
         </div>
         <div class="contact">
-            <a href="#">GitHub</a>
             <a href="mailto:19883231601@163.com">邮箱</a>
         </div>
         <div class="tags">
             <span class="tag">#用户洞察</span>
             <span class="tag">#游戏评测</span>
             <span class="tag">#文化趋势</span>
-            <span class="tag">#设计分析</span>
+            <span class="tag">#营销分析</span>
         </div>
     </aside>
 
-    <!-- 右侧作品列表 -->
+    <!-- 右侧内容区域：两个模块 -->
     <main class="main">
-        <div>
-            <h2 class="section-title">📖 研究报告 · 游戏评测</h2>
+        
+        <!-- ========= 模块一：研究报告 · 游戏评测 ========= -->
+        <div class="module">
+            <div class="module-header">
+                <div class="section-title">
+                    <span>📖</span> 研究报告 · 游戏评测
+                </div>
+                <div class="module-desc">玩法拆解 · 用户洞察 · 设计分析 · 文化趋势</div>
+            </div>
             <div class="works-grid">
                 
-                <!-- 1. 逃离鸭科夫（新飞书链接） -->
+                <!-- 1. 逃离鸭科夫 -->
                 <div class="work-card">
                     <div class="card-content">
                         <div class="work-title">《逃离鸭科夫》一只鸭鸭的成功</div>
@@ -264,7 +297,7 @@
                     </div>
                 </div>
 
-                <!-- 2. Blueprince 认知流动（新飞书链接） -->
+                <!-- 2. Blueprince -->
                 <div class="work-card">
                     <div class="card-content">
                         <div class="work-title">《Blueprince》好评率回暖：从解密肉鸽看“认知流动”模式的吸引力</div>
@@ -277,20 +310,20 @@
                     </div>
                 </div>
 
-                <!-- 3. 赛博市井+老城烟火（公众号文章链接，保持不变） -->
+                <!-- 3. 赛博市井+老城烟火 -->
                 <div class="work-card">
                     <div class="card-content">
                         <div class="work-title">赛博市井+老城烟火：怎样的游戏都市能触发中国青年的集体共鸣？</div>
                         <div class="work-type">文化趋势 / 都市题材</div>
                         <div class="work-meta">2025 · 行业洞察</div>
                         <div class="work-desc">
-                            从《新月同行》《绝区零》《异环》等作品出发，探讨中式日常感崛起的底层逻辑——烟火气、个体记忆与“有温度的奇幻”。
+                            从《新月同行》《绝区零》《异环》等作品出发，探讨中式日常感崛起的底层逻辑——烟火气、个体记忆与"有温度的奇幻"。
                         </div>
                         <a href="https://mp.weixin.qq.com/s/NaYZxjPhoQAbCtxI6vVcxg" class="work-link" target="_blank">阅读全文 →</a>
                     </div>
                 </div>
 
-                <!-- 4. 苏丹的游戏 中式浪漫（新飞书链接） -->
+                <!-- 4. 苏丹的游戏 -->
                 <div class="work-card">
                     <div class="card-content">
                         <div class="work-title">《苏丹的游戏》的中式浪漫，新式国潮堂堂来袭</div>
@@ -303,7 +336,7 @@
                     </div>
                 </div>
 
-                <!-- 5. 小小书店 逃离内卷（新飞书链接） -->
+                <!-- 5. 小小书店 -->
                 <div class="work-card">
                     <div class="card-content">
                         <div class="work-title">仿生街溜子会遇见电子小镇吗？带你逃离内卷的《小小书店》</div>
@@ -315,11 +348,76 @@
                         <a href="https://my.feishu.cn/docx/OerTdAPo6o9Np7xuNCWcFC7dnvb?from=from_copylink" class="work-link" target="_blank">阅读全文 →</a>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- ========= 模块二：文娱市场分析（结合游戏设计与营销的思考） ========= -->
+        <div class="module">
+            <div class="module-header">
+                <div class="section-title">
+                    <span>📊</span> 文娱市场分析
+                </div>
+                <div class="module-desc">结合游戏设计与营销的思考 · 热点洞察 · 年轻人喜好</div>
+            </div>
+            <div class="works-grid">
+                
+                <!-- 1. 暑期大爆女频"无CP"文 -->
+                <div class="work-card">
+                    <div class="card-content">
+                        <div class="work-title">暑期大爆女频"无CP"文：女性群像崛起之下，我们究竟在看什么</div>
+                        <div class="work-type">网文趋势 / 女性向洞察</div>
+                        <div class="work-meta">2025 · 信号采集</div>
+                        <div class="work-desc">
+                            从《漫画万人嫌自救指南》《游戏降临》等现象级作品，拆解"利己女性群像""破格主角""对抗路角色"如何击中年轻女性读者。
+                        </div>
+                        <a href="https://my.feishu.cn/docx/ZgT4dCxCSoXODHxvDBUcBVv1noc?from=from_copylink" class="work-link" target="_blank">阅读全文 →</a>
+                    </div>
+                </div>
+
+                <!-- 2. 中V新晋传说曲《请不要带我走》 -->
+                <div class="work-card">
+                    <div class="card-content">
+                        <div class="work-title">"请不要带我走~走到血徒流~"中V新晋传说曲，神性词句为何总是让人落泪</div>
+                        <div class="work-type">音乐趋势 / 情绪消费</div>
+                        <div class="work-meta">2025 · 信号采集</div>
+                        <div class="work-desc">
+                            拆解玄学经济、情绪摇滚、反抗叙事——从《请不要带我走》《反乌托邦》《嗵嗵》看Z世代如何通过"与神角力"的歌曲完成心理代偿。
+                        </div>
+                        <a href="https://my.feishu.cn/docx/N7Xld9eXhoiSHkxgyKNcOF2WnBf?from=from_copylink" class="work-link" target="_blank">阅读全文 →</a>
+                    </div>
+                </div>
+
+                <!-- 3. "赛博华佗"猜病游戏 -->
+                <div class="work-card">
+                    <div class="card-content">
+                        <div class="work-title">"赛博华佗"坐诊，猜病游戏背后爆火的原因是什么？</div>
+                        <div class="work-type">AI交互 / 权力代偿</div>
+                        <div class="work-meta">2025 · 现象分析</div>
+                        <div class="work-desc">
+                            从"权威身份扮演"到"规则解构"，拆解猜病游戏如何通过失控感与掌控欲的对冲，构建Z世代的"安全权力游乐场"。
+                        </div>
+                        <a href="https://my.feishu.cn/docx/HahLdXiQdoMVmGxTmBtcPkionpK?from=from_copylink" class="work-link" target="_blank">阅读全文 →</a>
+                    </div>
+                </div>
+
+                <!-- 4. "暗黑版哆啦A梦"《章鱼噼的原罪》 -->
+                <div class="work-card">
+                    <div class="card-content">
+                        <div class="work-title">"暗黑版哆啦A梦"爆火，这部致郁系作品成了新二次元的圣经</div>
+                        <div class="work-type">内容分析 / 情绪释放</div>
+                        <div class="work-meta">2025 · 信号采集</div>
+                        <div class="work-desc">
+                            从认知错位、萌物反差到系统暴力，拆解"致郁系"作品如何成为Z世代的情绪出口与社交货币。
+                        </div>
+                        <a href="https://my.feishu.cn/docx/GtR0d6RLzooeohxbFFfcrM8FnEc?from=from_copylink" class="work-link" target="_blank">阅读全文 →</a>
+                    </div>
+                </div>
 
             </div>
         </div>
+
         <footer>
-            © 2025 陈雨菲 · 游戏研究与用户洞察 | 内容均为原创分析
+            © 2025 陈雨菲 · 游戏研究与文娱市场分析 | 内容均为原创
         </footer>
     </main>
 </div>
