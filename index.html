@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="陈雨菲 · 游戏研究与用户洞察作品集">
+    <title>陈雨菲 · 游戏研究报告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f7fb;
+            color: #1a1e2c;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Roboto', monospace;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* 左侧边栏 - 亮色主题 */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: #ffffff;
+            border-radius: 2rem;
+            padding: 1.8rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            border-radius: 50%;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.3rem;
+            color: #0a0c12;
+        }
+
+        .bio {
+            color: #4b5563;
+            font-size: 0.9rem;
+            margin: 1rem 0 1.2rem 0;
+            border-left: 2px solid #3b82f6;
+            padding-left: 0.8rem;
+        }
+
+        .contact a {
+            display: inline-block;
+            margin-right: 1rem;
+            color: #4b5563;
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .contact a:hover {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+
+        .tags {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #f1f5f9;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        /* 右侧主区域 - 亮色主题 */
+        .main {
+            overflow-x: hidden;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0 0 1.2rem 0;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #e2e8f0;
+            display: inline-block;
+            letter-spacing: -0.2px;
+            color: #0f172a;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .work-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.25s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .work-card:hover {
+            border-color: #cbd5e1;
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-content {
+            padding: 1.3rem 1.3rem 1.5rem 1.3rem;
+        }
+
+        .work-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            line-height: 1.35;
+            color: #0f172a;
+        }
+
+        .work-type {
+            font-size: 0.65rem;
+            background: #f1f5f9;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            font-weight: 500;
+            color: #475569;
+            display: inline-block;
+            margin-top: 0.3rem;
+        }
+
+        .work-meta {
+            font-size: 0.7rem;
+            color: #64748b;
+            margin: 0.6rem 0 0.8rem 0;
+        }
+
+        .work-desc {
+            font-size: 0.85rem;
+            color: #334155;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .work-link {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #2563eb;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .work-link:hover {
+            color: #1d4ed8;
+            gap: 0.5rem;
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2rem;
+        }
+
+        @media (max-width: 780px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .sidebar {
+                position: relative;
+                top: 0;
+                text-align: center;
+            }
+            .avatar {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .bio {
+                text-align: left;
+            }
+            .tags {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 左侧个人信息 -->
+    <aside class="sidebar">
+        <div class="avatar">🔍</div>
+        <div class="name">陈雨菲</div>
+        <div class="bio">
+            一般路过互联网的阴暗观察者<br>
+            游戏用户研究 · 行业洞察 · 文化分析
+        </div>
+        <div class="contact">
+            <a href="#">GitHub</a>
+            <a href="mailto:19883231601@163.com">邮箱</a>
+        </div>
+        <div class="tags">
+            <span class="tag">#用户洞察</span>
+            <span class="tag">#游戏评测</span>
+            <span class="tag">#文化趋势</span>
+            <span class="tag">#设计分析</span>
+        </div>
+    </aside>
+
+    <!-- 右侧作品列表 -->
+    <main class="main">
+        <div>
+            <h2 class="section-title">📖 研究报告 · 游戏评测</h2>
+            <div class="works-grid">
+                
+                <!-- 1. 逃离鸭科夫（新飞书链接） -->
+                <div class="work-card">
+                    <div class="card-content">
+                        <div class="work-title">《逃离鸭科夫》一只鸭鸭的成功</div>
+                        <div class="work-type">游戏评测 / 用户洞察</div>
+                        <div class="work-meta">2025 · 试玩报告</div>
+                        <div class="work-desc">
+                            纯PVE搜打撤游戏如何收留心碎鼠鼠玩家？从玩家分层、挫败感优化到轻量化破圈路径，拆解这款国产黑马的产品逻辑。
+                        </div>
+                        <a href="https://my.feishu.cn/docx/Cc2adUzMOohQfrxbBNjcVU53nUp?from=from_copylink" class="work-link" target="_blank">阅读全文 →</a>
+                    </div>
+                </div>
+
+                <!-- 2. Blueprince 认知流动（新飞书链接） -->
+                <div class="work-card">
+                    <div class="card-content">
+                        <div class="work-title">《Blueprince》好评率回暖：从解密肉鸽看“认知流动”模式的吸引力</div>
+                        <div class="work-type">玩法机制 / 心理学分析</div>
+                        <div class="work-meta">2025 · 深度报告</div>
+                        <div class="work-desc">
+                            从媒体高分与玩家低评的割裂到好评逆势回升，提出“认知流动”框架——非线性线索、社区协作与元谜题如何重塑沉浸感。
+                        </div>
+                        <a href="https://my.feishu.cn/docx/ZIHZdZk9KoubHHxuSCkcyjnOnff?from=from_copylink" class="work-link" target="_blank">阅读全文 →</a>
+                    </div>
+                </div>
+
+                <!-- 3. 赛博市井+老城烟火（公众号文章链接，保持不变） -->
+                <div class="work-card">
+                    <div class="card-content">
+                        <div class="work-title">赛博市井+老城烟火：怎样的游戏都市能触发中国青年的集体共鸣？</div>
+                        <div class="work-type">文化趋势 / 都市题材</div>
+                        <div class="work-meta">2025 · 行业洞察</div>
+                        <div class="work-desc">
+                            从《新月同行》《绝区零》《异环》等作品出发，探讨中式日常感崛起的底层逻辑——烟火气、个体记忆与“有温度的奇幻”。
+                        </div>
+                        <a href="https://mp.weixin.qq.com/s/NaYZxjPhoQAbCtxI6vVcxg" class="work-link" target="_blank">阅读全文 →</a>
+                    </div>
+                </div>
+
+                <!-- 4. 苏丹的游戏 中式浪漫（新飞书链接） -->
+                <div class="work-card">
+                    <div class="card-content">
+                        <div class="work-title">《苏丹的游戏》的中式浪漫，新式国潮堂堂来袭</div>
+                        <div class="work-type">叙事设计 / 文化价值观</div>
+                        <div class="work-meta">2025 · 案例分析</div>
+                        <div class="work-desc">
+                            中东皮、中国核——为什么架空题材却能精准击中中式价值观？“得道多助”、儒道理想、侠文化与现代人文关怀的融合。
+                        </div>
+                        <a href="https://my.feishu.cn/docx/LAyTdiqU3o3clFxOuu4cq0rfnVe?from=from_copylink" class="work-link" target="_blank">阅读全文 →</a>
+                    </div>
+                </div>
+
+                <!-- 5. 小小书店 逃离内卷（新飞书链接） -->
+                <div class="work-card">
+                    <div class="card-content">
+                        <div class="work-title">仿生街溜子会遇见电子小镇吗？带你逃离内卷的《小小书店》</div>
+                        <div class="work-type">生活模拟 / 慢设计</div>
+                        <div class="work-meta">2025 · 体验分析</div>
+                        <div class="work-desc">
+                            从“少即是多”的经营哲学、反焦虑的时间设计到本地化问题反思，拆解治愈系游戏如何构建可栖居的赛博乌托邦。
+                        </div>
+                        <a href="https://my.feishu.cn/docx/OerTdAPo6o9Np7xuNCWcFC7dnvb?from=from_copylink" class="work-link" target="_blank">阅读全文 →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <footer>
+            © 2025 陈雨菲 · 游戏研究与用户洞察 | 内容均为原创分析
+        </footer>
+    </main>
+</div>
+</body>
+</html>
